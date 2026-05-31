@@ -3,8 +3,8 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="Manan Mittal — Cloud DevOps Engineer specializing in AWS, Kubernetes, Terraform and Python. Building scalable infrastructure that ships faster and breaks less." />
-  <title>Manan Mittal | Cloud DevOps Engineer</title>
+  <meta name="description" content="Manan Mittal — Cloud DevOps Engineer. AWS, Kubernetes, Terraform, Python. Building infrastructure that scales." />
+  <title>Manan Mittal — Cloud DevOps Engineer</title>
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500;600;700&display=swap" rel="stylesheet" />
@@ -12,426 +12,367 @@
 </head>
 <body>
 
-  <!-- Particle canvas -->
-  <canvas id="canvas"></canvas>
+  <!-- Mouse glow -->
+  <div id="glow"></div>
 
-  <!-- Ambient orbs -->
-  <div class="orb orb-1"></div>
-  <div class="orb orb-2"></div>
-  <div class="orb orb-3"></div>
+  <!-- Progress bar -->
+  <div id="progress"></div>
 
-  <!-- Loader -->
+  <!-- LOADER -->
   <div id="loader">
-    <div class="loader-inner">
-      <div class="loader-logo">&lt;MM/&gt;</div>
-      <div class="loader-bar"><div class="loader-fill"></div></div>
+    <div class="ld-wrap">
+      <div class="ld-logo">MM_</div>
+      <div class="ld-bar-wrap">
+        <div class="ld-bar" id="ldBar"></div>
+      </div>
+      <div class="ld-status" id="ldStatus">LOADING SYSTEMS...</div>
     </div>
   </div>
 
-  <!-- NAV -->
+  <!-- ═══ NAV ═══ -->
   <nav id="nav">
-    <div class="nav-wrap">
-      <a href="#hero" class="logo"><span>&lt;</span>MM<span>/&gt;</span></a>
-      <ul class="nav-links" id="navLinks">
+    <a href="#hero" class="n-logo">&lt;MM/&gt;</a>
+    <div class="n-right">
+      <ul class="n-links" id="nLinks">
         <li><a href="#about">About</a></li>
-        <li><a href="#skills">Skills</a></li>
-        <li><a href="#experience">Experience</a></li>
+        <li><a href="#skills">Stack</a></li>
+        <li><a href="#experience">Work</a></li>
         <li><a href="#projects">Projects</a></li>
-        <li><a href="#certifications">Certs</a></li>
-        <li><a href="#contact" class="nav-hire">Hire Me</a></li>
+        <li><a href="#contact" class="n-cta">Hire Me</a></li>
       </ul>
-      <button class="burger" id="burger" aria-label="Menu">
-        <span></span><span></span><span></span>
+      <button class="n-burger" id="burger" aria-label="Menu">
+        <span></span><span></span>
       </button>
     </div>
   </nav>
 
-  <!-- ═══════════ HERO ═══════════ -->
+  <!-- ═══════════════════════════
+       HERO — EDITORIAL
+  ══════════════════════════════ -->
   <section id="hero">
-    <div class="hero-wrap">
-      <div class="hero-left">
-        <div class="avail-pill">
-          <span class="avail-dot"></span> Open to Opportunities
-        </div>
+    <div class="hero-eyebrow">
+      <span class="he-tag">Cloud DevOps Engineer</span>
+      <span class="he-sep">✦</span>
+      <span>LTIMindtree · 2024 – Present</span>
+      <span class="he-sep">✦</span>
+      <span class="he-avail"><span class="he-dot"></span>Open to Work</span>
+    </div>
 
-        <h1 class="hero-name">
-          <span class="name-line">Manan</span>
-          <span class="name-line gradient-text">Mittal</span>
-        </h1>
+    <h1 class="hero-name">
+      <span class="hn-a" data-scramble="MANAN">MANAN</span>
+      <span class="hn-b" data-scramble="MITTAL">MITTAL</span>
+    </h1>
 
-        <div class="hero-role-wrap">
-          <span class="role-static">Building&nbsp;</span>
-          <div class="role-cycle" id="roleCycle">
-            <span class="rc-item">Cloud Infrastructure</span>
-            <span class="rc-item">Kubernetes Platforms</span>
-            <span class="rc-item">CI/CD Pipelines</span>
-            <span class="rc-item">Event-Driven Systems</span>
-          </div>
-        </div>
-
-        <p class="hero-p">Cloud DevOps Engineer at <strong>LTIMindtree</strong> — architecting AWS microservices, container platforms &amp; automated delivery workflows that ship <em>faster</em> and break <em>less</em>.</p>
-
-        <div class="hero-btns">
-          <a href="#contact" class="btn-glow">
-            <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 12 19.79 19.79 0 0 1 1.61 3.41 2 2 0 0 1 3.6 1.21h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L7.91 9A16 16 0 0 0 15 16.09l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
-            Let's Connect
-          </a>
-          <a href="#projects" class="btn-outline">View Projects ↓</a>
-        </div>
-
-        <div class="tech-scroll-wrap">
-          <div class="tech-scroll">
-            <div class="tech-track">
-              <span>AWS EKS</span><span>Kubernetes</span><span>Terraform</span><span>Python</span>
-              <span>Helm</span><span>GitLab CI/CD</span><span>Prometheus</span><span>Grafana</span>
-              <span>Apache Kafka</span><span>Docker</span><span>Jenkins</span><span>SQS</span>
-              <span>AWS EKS</span><span>Kubernetes</span><span>Terraform</span><span>Python</span>
-              <span>Helm</span><span>GitLab CI/CD</span><span>Prometheus</span><span>Grafana</span>
-              <span>Apache Kafka</span><span>Docker</span><span>Jenkins</span><span>SQS</span>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <div class="hero-right">
-        <!-- Main glass card -->
-        <div class="dash-card">
-          <div class="dash-header">
-            <div class="dash-dots"><span></span><span></span><span></span></div>
-            <span class="dash-title">engineering_impact.json</span>
-          </div>
-          <div class="dash-metrics">
-            <div class="metric">
-              <div class="metric-num"><span class="count" data-target="2" data-suffix="+">0</span></div>
-              <div class="metric-label">Years Experience</div>
-              <div class="metric-bar"><div class="metric-fill" style="width:66%"></div></div>
-            </div>
-            <div class="metric">
-              <div class="metric-num"><span class="count" data-target="40" data-suffix="%">0</span></div>
-              <div class="metric-label">Deploy Time Reduced</div>
-              <div class="metric-bar"><div class="metric-fill" style="width:40%"></div></div>
-            </div>
-            <div class="metric">
-              <div class="metric-num"><span class="count" data-target="30" data-suffix="%">0</span></div>
-              <div class="metric-label">MTTR Improvement</div>
-              <div class="metric-bar"><div class="metric-fill" style="width:30%"></div></div>
-            </div>
-            <div class="metric">
-              <div class="metric-num"><span class="count" data-target="50" data-suffix="K+">0</span></div>
-              <div class="metric-label">Events Processed/Day</div>
-              <div class="metric-bar"><div class="metric-fill" style="width:80%"></div></div>
-            </div>
-          </div>
-          <div class="dash-status">
-            <span class="status-dot"></span>
-            <span class="status-text">LTIMindtree · Noida, India · Jan 2024 – Present</span>
-          </div>
-        </div>
-
-        <!-- Floating cert badges -->
-        <div class="float-chip chip-1">☁️ AWS SAA-C03</div>
-        <div class="float-chip chip-2">☸️ Kubernetes</div>
-        <div class="float-chip chip-3">🤖 GitHub Copilot</div>
-        <div class="float-chip chip-4">🍃 MongoDB</div>
+    <div class="hero-lower">
+      <p class="hero-desc">
+        Building cloud infrastructure that ships<br>faster, scales further, and breaks less.
+      </p>
+      <div class="hero-actions">
+        <a href="#contact" class="btn-primary mag">Hire Me</a>
+        <a href="#experience" class="btn-ghost">Work Experience →</a>
       </div>
     </div>
 
-    <div class="scroll-hint">
-      <div class="scroll-mouse"><div class="scroll-wheel"></div></div>
-      <span>Scroll</span>
+    <div class="hero-ticker-wrap">
+      <div class="ticker">
+        <div class="ticker-inner">
+          <span>AWS EKS ✦</span><span>Kubernetes ✦</span><span>Terraform ✦</span>
+          <span>Python ✦</span><span>GitLab CI/CD ✦</span><span>Prometheus ✦</span>
+          <span>Grafana ✦</span><span>Apache Kafka ✦</span><span>Docker ✦</span>
+          <span>Helm ✦</span><span>Jenkins ✦</span><span>GitOps ✦</span>
+          <span>Lambda ✦</span><span>SQS ✦</span><span>DynamoDB ✦</span>
+          <span>AWS EKS ✦</span><span>Kubernetes ✦</span><span>Terraform ✦</span>
+          <span>Python ✦</span><span>GitLab CI/CD ✦</span><span>Prometheus ✦</span>
+          <span>Grafana ✦</span><span>Apache Kafka ✦</span><span>Docker ✦</span>
+          <span>Helm ✦</span><span>Jenkins ✦</span><span>GitOps ✦</span>
+          <span>Lambda ✦</span><span>SQS ✦</span><span>DynamoDB ✦</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="hero-scroll">
+      <div class="hs-bar"></div>
+      <span>SCROLL</span>
     </div>
   </section>
 
-  <!-- ═══════════ ABOUT ═══════════ -->
-  <section id="about" class="section-pad">
-    <div class="container">
-      <div class="about-grid">
-        <div class="about-left reveal">
-          <div class="section-eyebrow">// about me</div>
-          <h2 class="section-title">Who I Am</h2>
-          <div class="accent-line"></div>
-          <p class="about-text">Cloud DevOps Engineer with <strong>~2 years of production experience</strong> designing AWS-based microservices, Kubernetes container platforms, and fully automated CI/CD pipelines.</p>
-          <p class="about-text">I specialize in <strong>Kubernetes, Terraform, Python</strong>, and event-driven architectures — driving system reliability, deployment automation, and observability at scale. Experienced with <strong>GitOps, Platform Engineering</strong>, and distributed systems.</p>
-          <div class="about-links">
-            <a href="mailto:m20.manan@gmail.com" class="about-link">m20.manan@gmail.com</a>
-            <a href="https://linkedin.com/in/manan0220" target="_blank" rel="noopener" class="about-link">linkedin.com/in/manan0220</a>
-          </div>
+  <!-- ═══════════════════════════
+       ABOUT — PILLARS + IMPACT
+  ══════════════════════════════ -->
+  <section id="about">
+    <div class="wrapper">
+      <div class="sec-label reveal">/ ABOUT</div>
+
+      <div class="pillars reveal">
+        <div class="pillar">
+          <div class="p-num">01</div>
+          <h3>Infrastructure</h3>
+          <p>Kubernetes (EKS), Terraform, CloudFormation — provisioning fault-tolerant cloud platforms built for scale from day one.</p>
         </div>
-        <div class="about-right reveal">
-          <div class="info-cards">
-            <div class="info-card">
-              <div class="ic-icon">🎓</div>
-              <div>
-                <div class="ic-title">Vellore Institute of Technology</div>
-                <div class="ic-sub">B.Tech · CS (AI &amp; ML) · 2019–2023</div>
-              </div>
-            </div>
-            <div class="info-card">
-              <div class="ic-icon">💼</div>
-              <div>
-                <div class="ic-title">LTIMindtree</div>
-                <div class="ic-sub">Cloud DevOps Engineer · Jan 2024 – Present</div>
-              </div>
-            </div>
-            <div class="info-card">
-              <div class="ic-icon">📍</div>
-              <div>
-                <div class="ic-title">Noida, India</div>
-                <div class="ic-sub">Open to remote &amp; relocation</div>
-              </div>
-            </div>
-          </div>
+        <div class="p-divider"></div>
+        <div class="pillar">
+          <div class="p-num">02</div>
+          <h3>Automation</h3>
+          <p>GitLab CI/CD, Jenkins, Python scripting — pipelines that deploy code <strong>40% faster</strong> and never drift from desired state.</p>
+        </div>
+        <div class="p-divider"></div>
+        <div class="pillar">
+          <div class="p-num">03</div>
+          <h3>Reliability</h3>
+          <p>Prometheus, Grafana, distributed tracing — observability that reduced MTTR by <strong>30%</strong> and catches issues before users do.</p>
+        </div>
+      </div>
+
+      <div class="impact-strip reveal">
+        <div class="impact-item">
+          <div class="imp-val"><span class="count" data-target="2" data-suffix="+">0</span></div>
+          <div class="imp-key">Years in Production</div>
+        </div>
+        <div class="imp-divider"></div>
+        <div class="impact-item">
+          <div class="imp-val"><span class="count" data-target="40" data-suffix="%">0</span></div>
+          <div class="imp-key">Faster Deployments</div>
+        </div>
+        <div class="imp-divider"></div>
+        <div class="impact-item">
+          <div class="imp-val"><span class="count" data-target="30" data-suffix="%">0</span></div>
+          <div class="imp-key">MTTR Reduction</div>
+        </div>
+        <div class="imp-divider"></div>
+        <div class="impact-item">
+          <div class="imp-val"><span class="count" data-target="50" data-suffix="K+">0</span></div>
+          <div class="imp-key">Events Processed/Day</div>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- ═══════════ SKILLS ═══════════ -->
-  <section id="skills" class="section-pad section-dark">
-    <div class="container">
-      <div class="section-head reveal">
-        <div class="section-eyebrow">// tech stack</div>
-        <h2 class="section-title">Skills &amp; Tools</h2>
-        <div class="accent-line"></div>
+  <!-- ═══════════════════════════
+       SKILLS — STATUS BOARD
+  ══════════════════════════════ -->
+  <section id="skills">
+    <div class="wrapper">
+      <div class="sec-label reveal">/ TECH STACK</div>
+      <h2 class="sec-title reveal" data-scramble="ARSENAL">ARSENAL</h2>
+
+      <div class="sb-head reveal">
+        <span>Service</span>
+        <span class="sb-cat-col">Category</span>
+        <span>Proficiency</span>
+        <span class="sb-lvl-col">Level</span>
+        <span>Status</span>
       </div>
 
-      <div class="skills-grid reveal">
+      <div class="status-board reveal">
 
-        <div class="skill-block">
-          <div class="sb-label">
-            <span class="sb-icon">☸️</span>
-            Container &amp; Orchestration
-          </div>
-          <div class="skill-bars">
-            <div class="sbar-item">
-              <div class="sbar-top"><span>Kubernetes (EKS)</span><span>Expert</span></div>
-              <div class="sbar-track"><div class="sbar-fill" data-w="92"></div></div>
-            </div>
-            <div class="sbar-item">
-              <div class="sbar-top"><span>Docker</span><span>Expert</span></div>
-              <div class="sbar-track"><div class="sbar-fill" data-w="90"></div></div>
-            </div>
-            <div class="sbar-item">
-              <div class="sbar-top"><span>Helm</span><span>Advanced</span></div>
-              <div class="sbar-track"><div class="sbar-fill" data-w="85"></div></div>
-            </div>
-            <div class="sbar-item">
-              <div class="sbar-top"><span>ECS</span><span>Advanced</span></div>
-              <div class="sbar-track"><div class="sbar-fill" data-w="80"></div></div>
-            </div>
-          </div>
+        <div class="sb-row">
+          <div class="sbr-service"><span class="sbr-dot green"></span>kubernetes-cluster-ops</div>
+          <div class="sbr-cat">Container</div>
+          <div class="sbr-bar-wrap"><div class="sbr-bar" data-w="92"></div></div>
+          <div class="sbr-lvl">Expert</div>
+          <div class="sbr-status active">● ACTIVE</div>
         </div>
 
-        <div class="skill-block">
-          <div class="sb-label">
-            <span class="sb-icon">☁️</span>
-            Cloud &amp; AWS
-          </div>
-          <div class="skill-bars">
-            <div class="sbar-item">
-              <div class="sbar-top"><span>EKS / Lambda / SQS</span><span>Expert</span></div>
-              <div class="sbar-track"><div class="sbar-fill" data-w="88"></div></div>
-            </div>
-            <div class="sbar-item">
-              <div class="sbar-top"><span>EC2 / VPC / IAM</span><span>Advanced</span></div>
-              <div class="sbar-track"><div class="sbar-fill" data-w="85"></div></div>
-            </div>
-            <div class="sbar-item">
-              <div class="sbar-top"><span>CloudWatch / Step Fn</span><span>Advanced</span></div>
-              <div class="sbar-track"><div class="sbar-fill" data-w="80"></div></div>
-            </div>
-            <div class="sbar-item">
-              <div class="sbar-top"><span>CloudFormation / CDK</span><span>Intermediate</span></div>
-              <div class="sbar-track"><div class="sbar-fill" data-w="72"></div></div>
-            </div>
-          </div>
+        <div class="sb-row">
+          <div class="sbr-service"><span class="sbr-dot green"></span>docker-container-platform</div>
+          <div class="sbr-cat">Container</div>
+          <div class="sbr-bar-wrap"><div class="sbr-bar" data-w="90"></div></div>
+          <div class="sbr-lvl">Expert</div>
+          <div class="sbr-status active">● ACTIVE</div>
         </div>
 
-        <div class="skill-block">
-          <div class="sb-label">
-            <span class="sb-icon">🔧</span>
-            DevOps &amp; IaC
-          </div>
-          <div class="skill-bars">
-            <div class="sbar-item">
-              <div class="sbar-top"><span>Terraform</span><span>Expert</span></div>
-              <div class="sbar-track"><div class="sbar-fill" data-w="88"></div></div>
-            </div>
-            <div class="sbar-item">
-              <div class="sbar-top"><span>GitLab CI/CD</span><span>Expert</span></div>
-              <div class="sbar-track"><div class="sbar-fill" data-w="90"></div></div>
-            </div>
-            <div class="sbar-item">
-              <div class="sbar-top"><span>Jenkins</span><span>Advanced</span></div>
-              <div class="sbar-track"><div class="sbar-fill" data-w="80"></div></div>
-            </div>
-            <div class="sbar-item">
-              <div class="sbar-top"><span>GitOps</span><span>Advanced</span></div>
-              <div class="sbar-track"><div class="sbar-fill" data-w="83"></div></div>
-            </div>
-          </div>
+        <div class="sb-row">
+          <div class="sbr-service"><span class="sbr-dot green"></span>aws-eks-cloud-platform</div>
+          <div class="sbr-cat">Cloud</div>
+          <div class="sbr-bar-wrap"><div class="sbr-bar" data-w="88"></div></div>
+          <div class="sbr-lvl">Expert</div>
+          <div class="sbr-status active">● ACTIVE</div>
         </div>
 
-        <div class="skill-block">
-          <div class="sb-label">
-            <span class="sb-icon">📊</span>
-            Observability
-          </div>
-          <div class="skill-bars">
-            <div class="sbar-item">
-              <div class="sbar-top"><span>Prometheus</span><span>Advanced</span></div>
-              <div class="sbar-track"><div class="sbar-fill" data-w="82"></div></div>
-            </div>
-            <div class="sbar-item">
-              <div class="sbar-top"><span>Grafana</span><span>Advanced</span></div>
-              <div class="sbar-track"><div class="sbar-fill" data-w="82"></div></div>
-            </div>
-            <div class="sbar-item">
-              <div class="sbar-top"><span>Loki / CloudWatch</span><span>Intermediate</span></div>
-              <div class="sbar-track"><div class="sbar-fill" data-w="75"></div></div>
-            </div>
-          </div>
+        <div class="sb-row">
+          <div class="sbr-service"><span class="sbr-dot green"></span>aws-lambda-sqs-sns</div>
+          <div class="sbr-cat">Cloud</div>
+          <div class="sbr-bar-wrap"><div class="sbr-bar" data-w="85"></div></div>
+          <div class="sbr-lvl">Advanced</div>
+          <div class="sbr-status active">● ACTIVE</div>
         </div>
 
-        <div class="skill-block">
-          <div class="sb-label">
-            <span class="sb-icon">💻</span>
-            Programming
-          </div>
-          <div class="skill-bars">
-            <div class="sbar-item">
-              <div class="sbar-top"><span>Python</span><span>Advanced</span></div>
-              <div class="sbar-track"><div class="sbar-fill" data-w="85"></div></div>
-            </div>
-            <div class="sbar-item">
-              <div class="sbar-top"><span>Bash / Shell</span><span>Advanced</span></div>
-              <div class="sbar-track"><div class="sbar-fill" data-w="83"></div></div>
-            </div>
-            <div class="sbar-item">
-              <div class="sbar-top"><span>SQL</span><span>Intermediate</span></div>
-              <div class="sbar-track"><div class="sbar-fill" data-w="70"></div></div>
-            </div>
-          </div>
+        <div class="sb-row">
+          <div class="sbr-service"><span class="sbr-dot green"></span>terraform-infrastructure</div>
+          <div class="sbr-cat">IaC</div>
+          <div class="sbr-bar-wrap"><div class="sbr-bar" data-w="88"></div></div>
+          <div class="sbr-lvl">Expert</div>
+          <div class="sbr-status active">● ACTIVE</div>
         </div>
 
-        <div class="skill-block">
-          <div class="sb-label">
-            <span class="sb-icon">🌊</span>
-            Data &amp; Streaming
-          </div>
-          <div class="skill-bars">
-            <div class="sbar-item">
-              <div class="sbar-top"><span>Apache Kafka</span><span>Advanced</span></div>
-              <div class="sbar-track"><div class="sbar-fill" data-w="80"></div></div>
-            </div>
-            <div class="sbar-item">
-              <div class="sbar-top"><span>Apache Airflow</span><span>Intermediate</span></div>
-              <div class="sbar-track"><div class="sbar-fill" data-w="70"></div></div>
-            </div>
-            <div class="sbar-item">
-              <div class="sbar-top"><span>PostgreSQL / MongoDB</span><span>Intermediate</span></div>
-              <div class="sbar-track"><div class="sbar-fill" data-w="72"></div></div>
-            </div>
-          </div>
+        <div class="sb-row">
+          <div class="sbr-service"><span class="sbr-dot green"></span>gitlab-ci-cd-pipelines</div>
+          <div class="sbr-cat">DevOps</div>
+          <div class="sbr-bar-wrap"><div class="sbr-bar" data-w="90"></div></div>
+          <div class="sbr-lvl">Expert</div>
+          <div class="sbr-status active">● ACTIVE</div>
+        </div>
+
+        <div class="sb-row">
+          <div class="sbr-service"><span class="sbr-dot green"></span>helm-chart-management</div>
+          <div class="sbr-cat">DevOps</div>
+          <div class="sbr-bar-wrap"><div class="sbr-bar" data-w="85"></div></div>
+          <div class="sbr-lvl">Advanced</div>
+          <div class="sbr-status active">● ACTIVE</div>
+        </div>
+
+        <div class="sb-row">
+          <div class="sbr-service"><span class="sbr-dot green"></span>prometheus-grafana-stack</div>
+          <div class="sbr-cat">Observability</div>
+          <div class="sbr-bar-wrap"><div class="sbr-bar" data-w="82"></div></div>
+          <div class="sbr-lvl">Advanced</div>
+          <div class="sbr-status active">● ACTIVE</div>
+        </div>
+
+        <div class="sb-row">
+          <div class="sbr-service"><span class="sbr-dot green"></span>python-automation</div>
+          <div class="sbr-cat">Programming</div>
+          <div class="sbr-bar-wrap"><div class="sbr-bar" data-w="85"></div></div>
+          <div class="sbr-lvl">Advanced</div>
+          <div class="sbr-status active">● ACTIVE</div>
+        </div>
+
+        <div class="sb-row">
+          <div class="sbr-service"><span class="sbr-dot green"></span>apache-kafka-streaming</div>
+          <div class="sbr-cat">Data</div>
+          <div class="sbr-bar-wrap"><div class="sbr-bar" data-w="80"></div></div>
+          <div class="sbr-lvl">Advanced</div>
+          <div class="sbr-status active">● ACTIVE</div>
+        </div>
+
+        <div class="sb-row">
+          <div class="sbr-service"><span class="sbr-dot amber"></span>jenkins-ci-platform</div>
+          <div class="sbr-cat">DevOps</div>
+          <div class="sbr-bar-wrap"><div class="sbr-bar" data-w="78"></div></div>
+          <div class="sbr-lvl">Advanced</div>
+          <div class="sbr-status running">◎ RUNNING</div>
+        </div>
+
+        <div class="sb-row">
+          <div class="sbr-service"><span class="sbr-dot amber"></span>aws-cloudwatch-loki</div>
+          <div class="sbr-cat">Observability</div>
+          <div class="sbr-bar-wrap"><div class="sbr-bar" data-w="75"></div></div>
+          <div class="sbr-lvl">Intermediate</div>
+          <div class="sbr-status running">◎ RUNNING</div>
         </div>
 
       </div>
     </div>
   </section>
 
-  <!-- ═══════════ EXPERIENCE ═══════════ -->
-  <section id="experience" class="section-pad">
-    <div class="container">
-      <div class="section-head reveal">
-        <div class="section-eyebrow">// work history</div>
-        <h2 class="section-title">Experience</h2>
-        <div class="accent-line"></div>
-      </div>
+  <!-- ═══════════════════════════
+       EXPERIENCE
+  ══════════════════════════════ -->
+  <section id="experience">
+    <div class="wrapper">
+      <div class="sec-label reveal">/ EXPERIENCE</div>
+      <h2 class="sec-title reveal" data-scramble="WORK">WORK</h2>
 
-      <div class="exp-timeline">
-        <div class="exp-card reveal">
-          <div class="exp-left">
-            <div class="exp-logo">LTI</div>
-            <div class="exp-vline"></div>
-          </div>
-          <div class="exp-content">
-            <div class="exp-top">
-              <div>
-                <div class="exp-company">LTIMindtree</div>
-                <div class="exp-role">Cloud DevOps Engineer / Python Developer</div>
-                <div class="exp-location">📍 Noida, India</div>
-              </div>
-              <div class="exp-period">Jan 2024 – Present</div>
-            </div>
-
-            <div class="exp-highlights">
-              <div class="highlight-chip">🚀 40% faster deploys</div>
-              <div class="highlight-chip">📉 30% MTTR reduction</div>
-              <div class="highlight-chip">⚡ 20% less manual ops</div>
-            </div>
-
-            <ul class="exp-bullets">
-              <li>Orchestrated containerized workloads on <strong>Kubernetes (EKS)</strong> with multi-container pods, scaling strategies, and cluster ops ensuring high availability across microservices.</li>
-              <li>Designed <strong>CI/CD pipelines</strong> with GitLab CI/CD + Jenkins + Terraform — cut deployment time by <strong>~40%</strong> through fully automated build, test, and deploy workflows.</li>
-              <li>Implemented <strong>Helm charts</strong> for repeatable, version-controlled deployments, enabling self-service deployment models for dev teams across environments.</li>
-              <li>Configured <strong>RBAC policies &amp; secrets management</strong> to enforce least-privilege access and harden cluster security per enterprise standards.</li>
-              <li>Built <strong>Prometheus &amp; Grafana dashboards</strong> for real-time container health &amp; latency observability — reduced incident MTTR by <strong>~30%</strong>.</li>
-              <li>Developed <strong>Python &amp; Bash automation</strong> for infra provisioning, eliminating config drift and reducing manual effort by ~20%.</li>
-              <li>Implemented <strong>event-driven workflows</strong> with SQS + Lambda for asynchronous, fault-tolerant processing across distributed services.</li>
-              <li>Designed reusable platform components (Python modules, Lambda layers) and resolved production incidents — pod crashes, pipeline failures.</li>
-            </ul>
-          </div>
+      <div class="exp-block reveal">
+        <div class="exp-left">
+          <div class="exp-co">LTIMindtree</div>
+          <div class="exp-period">Jan 2024<br>Present</div>
+          <div class="exp-loc">Noida, India</div>
         </div>
-      </div>
-    </div>
-  </section>
+        <div class="exp-right">
+          <div class="exp-role">Cloud DevOps Engineer / Python Developer</div>
 
-  <!-- ═══════════ PROJECTS ═══════════ -->
-  <section id="projects" class="section-pad section-dark">
-    <div class="container">
-      <div class="section-head reveal">
-        <div class="section-eyebrow">// what i've shipped</div>
-        <h2 class="section-title">Key Projects</h2>
-        <div class="accent-line"></div>
-      </div>
-
-      <div class="proj-grid">
-
-        <div class="proj-card reveal">
-          <div class="proj-glow"></div>
-          <div class="proj-num">01</div>
-          <div class="proj-icon">☸️</div>
-          <h3 class="proj-title">Kubernetes-Based Microservices Platform</h3>
-          <div class="proj-tags">
-            <span>AWS EKS</span><span>Helm</span><span>GitOps</span><span>GitLab CI/CD</span><span>Terraform</span>
+          <div class="exp-chips">
+            <span class="chip chip-green">🚀 40% faster deploys</span>
+            <span class="chip chip-blue">📉 30% MTTR reduction</span>
+            <span class="chip chip-amber">⚡ 20% less manual ops</span>
           </div>
-          <ul class="proj-bullets">
-            <li>Deployed container orchestration on AWS EKS with multi-container pods, <strong>horizontal pod autoscaling</strong>, and rolling deployments for zero-downtime releases.</li>
-            <li>GitOps workflow via Helm + GitLab CI/CD enabling <strong>declarative, version-controlled</strong> deployments and instant rollback across dev, staging, and prod.</li>
+
+          <ul class="exp-list">
+            <li>Orchestrated containerized workloads on <strong>Kubernetes (EKS)</strong> with multi-container pods, autoscaling strategies, and cluster operations ensuring high availability across microservices.</li>
+            <li>Designed <strong>CI/CD pipelines</strong> with GitLab CI/CD + Jenkins + Terraform, cutting deployment time by ~40% through fully automated build, test, and deploy workflows.</li>
+            <li>Implemented <strong>Helm charts</strong> for repeatable, version-controlled deployments, enabling self-service models for dev teams across dev, staging, and production.</li>
+            <li>Configured <strong>Kubernetes RBAC policies</strong> and secrets management to enforce least-privilege access and harden cluster security per enterprise standards.</li>
+            <li>Set up <strong>Prometheus &amp; Grafana dashboards</strong> for real-time container health and service latency observability, reducing incident MTTR by ~30%.</li>
+            <li>Developed <strong>Python &amp; Bash automation</strong> for infrastructure provisioning, eliminating config drift and cutting manual effort by ~20%.</li>
+            <li>Implemented <strong>event-driven workflows</strong> with SQS + Lambda for asynchronous, fault-tolerant processing across distributed services.</li>
+            <li>Designed reusable platform components (Python modules, Lambda layers) and resolved production incidents including pod crashes and pipeline failures.</li>
           </ul>
-          <div class="proj-metrics">
-            <div class="pm-item"><span class="pm-val">0-downtime</span><span class="pm-key">Deployments</span></div>
-            <div class="pm-item"><span class="pm-val">3 envs</span><span class="pm-key">Managed</span></div>
-            <div class="pm-item"><span class="pm-val">40%</span><span class="pm-key">Faster Releases</span></div>
+        </div>
+      </div>
+
+      <div class="edu-row reveal">
+        <div class="edu-left">
+          <div class="exp-co" style="font-size:clamp(1.5rem,3vw,2rem)">VIT</div>
+          <div class="exp-period">2019<br>2023</div>
+        </div>
+        <div class="exp-right">
+          <div class="exp-role">B.Tech — Computer Science (AI &amp; ML)</div>
+          <p style="color:var(--muted);font-size:0.9rem;margin-top:8px">Vellore Institute of Technology · Vellore, India</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════
+       PROJECTS
+  ══════════════════════════════ -->
+  <section id="projects">
+    <div class="wrapper">
+      <div class="sec-label reveal">/ PROJECTS</div>
+      <h2 class="sec-title reveal" data-scramble="WORK SHIPPED">WORK SHIPPED</h2>
+
+      <div class="proj-list">
+
+        <div class="proj-item reveal">
+          <div class="pi-num">01 —</div>
+          <div class="pi-content">
+            <div class="pi-top">
+              <div>
+                <div class="pi-icon">☸️</div>
+                <h3 class="pi-title">Kubernetes-Based Microservices Platform</h3>
+              </div>
+              <div class="pi-tags">
+                <span>EKS</span><span>Helm</span><span>GitOps</span><span>GitLab CI/CD</span><span>Terraform</span>
+              </div>
+            </div>
+            <div class="pi-body">
+              <ul class="pi-bullets">
+                <li>Deployed a container orchestration platform on AWS EKS with multi-container pods, <strong>horizontal pod autoscaling</strong>, and rolling deployment strategies for zero-downtime releases.</li>
+                <li>Implemented <strong>GitOps workflow</strong> using Helm charts and GitLab CI/CD, enabling declarative, version-controlled deployments and instant rollback across dev, staging, and production environments.</li>
+              </ul>
+              <div class="pi-metrics">
+                <div class="pm"><span class="pm-v">0-downtime</span><span class="pm-k">Releases</span></div>
+                <div class="pm"><span class="pm-v">3 envs</span><span class="pm-k">Managed</span></div>
+                <div class="pm"><span class="pm-v">40%</span><span class="pm-k">Faster CI/CD</span></div>
+              </div>
+            </div>
           </div>
         </div>
 
-        <div class="proj-card reveal">
-          <div class="proj-glow proj-glow-2"></div>
-          <div class="proj-num">02</div>
-          <div class="proj-icon">⚡</div>
-          <h3 class="proj-title">Real-Time Event Processing Pipeline</h3>
-          <div class="proj-tags">
-            <span>Apache Kafka</span><span>Python</span><span>AWS SQS</span><span>Lambda</span><span>Grafana</span>
-          </div>
-          <ul class="proj-bullets">
-            <li>Kafka-based event pipeline with Python consumers, partitioned topics, consumer groups, and offset management for <strong>scalable, fault-tolerant</strong> stream processing.</li>
-            <li>Failure-handling with retry strategies, DLQs, idempotent processing + Grafana alerting on consumer lag — stable at <strong>10K–50K events/day</strong>.</li>
-          </ul>
-          <div class="proj-metrics">
-            <div class="pm-item"><span class="pm-val">50K+</span><span class="pm-key">Events/Day</span></div>
-            <div class="pm-item"><span class="pm-val">DLQ</span><span class="pm-key">Fault Tolerance</span></div>
-            <div class="pm-item"><span class="pm-val">Real-time</span><span class="pm-key">Alerting</span></div>
+        <div class="proj-item reveal">
+          <div class="pi-num">02 —</div>
+          <div class="pi-content">
+            <div class="pi-top">
+              <div>
+                <div class="pi-icon">⚡</div>
+                <h3 class="pi-title">Real-Time Event Processing Pipeline</h3>
+              </div>
+              <div class="pi-tags">
+                <span>Kafka</span><span>Python</span><span>SQS</span><span>Lambda</span><span>Grafana</span>
+              </div>
+            </div>
+            <div class="pi-body">
+              <ul class="pi-bullets">
+                <li>Designed a <strong>Kafka-based event pipeline</strong> using Python consumers with partitioned topics, consumer groups, and offset management for scalable, fault-tolerant stream processing.</li>
+                <li>Built failure-handling mechanisms — retry strategies, dead-letter queues, idempotent processing — plus <strong>Grafana alerting</strong> on consumer lag for stable processing of 10K–50K events/day.</li>
+              </ul>
+              <div class="pi-metrics">
+                <div class="pm"><span class="pm-v">50K+</span><span class="pm-k">Events/Day</span></div>
+                <div class="pm"><span class="pm-v">DLQ</span><span class="pm-k">Fault Tolerant</span></div>
+                <div class="pm"><span class="pm-v">Real-time</span><span class="pm-k">Lag Alerting</span></div>
+              </div>
+            </div>
           </div>
         </div>
 
@@ -439,96 +380,69 @@
     </div>
   </section>
 
-  <!-- ═══════════ CERTIFICATIONS ═══════════ -->
-  <section id="certifications" class="section-pad">
-    <div class="container">
-      <div class="section-head reveal">
-        <div class="section-eyebrow">// credentials</div>
-        <h2 class="section-title">Certifications</h2>
-        <div class="accent-line"></div>
-      </div>
-
-      <div class="cert-grid reveal">
-        <div class="cert-card">
-          <div class="cert-badge cert-aws">☁️</div>
+  <!-- ═══════════════════════════
+       CERTIFICATIONS
+  ══════════════════════════════ -->
+  <section id="certs">
+    <div class="wrapper">
+      <div class="sec-label reveal">/ CREDENTIALS</div>
+      <div class="cert-row reveal">
+        <div class="cert-item">
+          <div class="cert-ico">☁️</div>
           <div class="cert-info">
             <div class="cert-name">AWS Certified Solutions Architect</div>
-            <div class="cert-level">Associate · SAA-C03</div>
-            <div class="cert-issuer">Amazon Web Services</div>
+            <div class="cert-sub">Associate · SAA-C03 · Amazon Web Services</div>
           </div>
-          <div class="cert-verified">✓ Verified</div>
+          <div class="cert-check">✓</div>
         </div>
-        <div class="cert-card">
-          <div class="cert-badge cert-mongo">🍃</div>
+        <div class="cert-item">
+          <div class="cert-ico">🍃</div>
           <div class="cert-info">
             <div class="cert-name">MongoDB SI Associate</div>
-            <div class="cert-level">Associate Level</div>
-            <div class="cert-issuer">MongoDB University</div>
+            <div class="cert-sub">Associate Level · MongoDB University</div>
           </div>
-          <div class="cert-verified">✓ Verified</div>
+          <div class="cert-check">✓</div>
         </div>
-        <div class="cert-card">
-          <div class="cert-badge cert-gh">🤖</div>
+        <div class="cert-item">
+          <div class="cert-ico">🤖</div>
           <div class="cert-info">
             <div class="cert-name">GitHub Copilot Certified</div>
-            <div class="cert-level">AI-Assisted Development</div>
-            <div class="cert-issuer">GitHub</div>
+            <div class="cert-sub">AI-Assisted Development · GitHub</div>
           </div>
-          <div class="cert-verified">✓ Verified</div>
+          <div class="cert-check">✓</div>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- ═══════════ CONTACT ═══════════ -->
-  <section id="contact" class="section-pad section-dark">
-    <div class="container">
-      <div class="contact-wrap reveal">
-        <div class="contact-left">
-          <div class="section-eyebrow">// let's build together</div>
-          <h2 class="contact-title">Ready to Work<br><span class="gradient-text">Together?</span></h2>
-          <p class="contact-desc">I'm actively looking for Cloud DevOps, Platform Engineering, or SRE roles. If you're building something ambitious and need someone who ships reliable infrastructure — let's talk.</p>
-
-          <div class="contact-items">
-            <a href="mailto:m20.manan@gmail.com" class="contact-item">
-              <div class="ci-icon">✉️</div>
-              <div>
-                <div class="ci-label">Email</div>
-                <div class="ci-val">m20.manan@gmail.com</div>
-              </div>
-              <div class="ci-arrow">→</div>
-            </a>
-            <a href="https://linkedin.com/in/manan0220" target="_blank" rel="noopener" class="contact-item">
-              <div class="ci-icon">💼</div>
-              <div>
-                <div class="ci-label">LinkedIn</div>
-                <div class="ci-val">linkedin.com/in/manan0220</div>
-              </div>
-              <div class="ci-arrow">→</div>
-            </a>
-            <a href="tel:+916393857728" class="contact-item">
-              <div class="ci-icon">📱</div>
-              <div>
-                <div class="ci-label">Phone</div>
-                <div class="ci-val">+91 6393857728</div>
-              </div>
-              <div class="ci-arrow">→</div>
-            </a>
-          </div>
-        </div>
-
+  <!-- ═══════════════════════════
+       CONTACT
+  ══════════════════════════════ -->
+  <section id="contact">
+    <div class="wrapper">
+      <div class="sec-label reveal">/ CONTACT</div>
+      <div class="contact-hero reveal">
+        <h2 class="contact-big">Let's Build<br><span class="accent-text">Something.</span></h2>
         <div class="contact-right">
-          <div class="contact-card">
-            <div class="avail-pill" style="margin-bottom:24px">
-              <span class="avail-dot"></span> Available Now
-            </div>
-            <div class="cc-title">Drop Me a Message</div>
-            <div class="cc-desc">Whether it's a job opportunity, project collaboration, or just a tech conversation — I'd love to hear from you.</div>
-            <a href="mailto:m20.manan@gmail.com" class="btn-glow" style="width:100%;justify-content:center;margin-top:24px">
-              <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
-              Say Hello
+          <p class="contact-desc">Looking for Cloud DevOps, Platform Engineering, or SRE roles. If you're building something ambitious — I'd love to be part of it.</p>
+          <div class="contact-links">
+            <a href="mailto:m20.manan@gmail.com" class="cl-item">
+              <span class="cl-label">EMAIL</span>
+              <span class="cl-val">m20.manan@gmail.com</span>
+              <span class="cl-arr">↗</span>
+            </a>
+            <a href="https://linkedin.com/in/manan0220" target="_blank" rel="noopener" class="cl-item">
+              <span class="cl-label">LINKEDIN</span>
+              <span class="cl-val">linkedin.com/in/manan0220</span>
+              <span class="cl-arr">↗</span>
+            </a>
+            <a href="tel:+916393857728" class="cl-item">
+              <span class="cl-label">PHONE</span>
+              <span class="cl-val">+91 6393857728</span>
+              <span class="cl-arr">↗</span>
             </a>
           </div>
+          <a href="mailto:m20.manan@gmail.com" class="btn-primary mag" style="margin-top:32px;display:inline-flex">Send Message →</a>
         </div>
       </div>
     </div>
@@ -536,10 +450,10 @@
 
   <!-- FOOTER -->
   <footer>
-    <div class="footer-wrap">
-      <div class="footer-logo">&lt;MM/&gt;</div>
-      <div class="footer-copy">Designed &amp; Built by <span>Manan Mittal</span> &copy; 2025</div>
-      <div class="footer-links">
+    <div class="wrapper ft-wrap">
+      <span class="ft-logo">&lt;MM/&gt;</span>
+      <span class="ft-copy">Manan Mittal &copy; 2025 — Cloud DevOps Engineer</span>
+      <div class="ft-links">
         <a href="mailto:m20.manan@gmail.com">Email</a>
         <a href="https://linkedin.com/in/manan0220" target="_blank" rel="noopener">LinkedIn</a>
       </div>
