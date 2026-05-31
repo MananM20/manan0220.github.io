@@ -100,22 +100,29 @@ function initReveal() {
 }
 
 /* ════════════════════════════════════════
-   SKILL BARS — animate on view
+   TECH CHIP — hover stagger
 ════════════════════════════════════════ */
 function initBars() {
+  // Stagger-animate tech chips when section enters view
   const obs = new IntersectionObserver((entries) => {
     entries.forEach(e => {
       if (e.isIntersecting) {
-        e.target.querySelectorAll('.sbr-bar').forEach((bar, i) => {
-          setTimeout(() => { bar.style.width = bar.dataset.w + '%'; }, i * 80 + 200);
+        e.target.querySelectorAll('.tg-chip').forEach((chip, i) => {
+          chip.style.opacity = '0';
+          chip.style.transform = 'translateY(10px)';
+          setTimeout(() => {
+            chip.style.transition = 'opacity 0.4s ease, transform 0.4s ease';
+            chip.style.opacity = '1';
+            chip.style.transform = 'translateY(0)';
+          }, i * 30 + 100);
         });
         obs.unobserve(e.target);
       }
     });
-  }, { threshold: 0.2 });
+  }, { threshold: 0.15 });
 
-  const board = document.querySelector('.status-board');
-  if (board) obs.observe(board);
+  const grid = document.querySelector('.tech-grid');
+  if (grid) obs.observe(grid);
 }
 
 /* ════════════════════════════════════════
