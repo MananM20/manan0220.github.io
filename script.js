@@ -128,29 +128,43 @@ function initBars() {
 /* ════════════════════════════════════════
    COUNTERS
 ════════════════════════════════════════ */
+function runCounter(el) {
+  const target = parseFloat(el.dataset.target);
+  const suffix = el.dataset.suffix || '';
+  // Set final value immediately so it's never stuck at 0
+  el.textContent = target + suffix;
+  // Then animate from 0
+  let cur = 0;
+  const step = target / (2000 / 16);
+  el.textContent = '0' + suffix;
+  const t = setInterval(() => {
+    cur = Math.min(cur + step, target);
+    el.textContent = (target < 10 ? cur.toFixed(1) : Math.floor(cur)) + suffix;
+    if (cur >= target) { el.textContent = target + suffix; clearInterval(t); }
+  }, 16);
+}
+
 function initCounters() {
+  const strip = document.querySelector('.impact-strip');
+  if (!strip) return;
+
+  // Fire immediately if already in viewport (hero/about visible on load)
+  const rect = strip.getBoundingClientRect();
+  if (rect.top < window.innerHeight) {
+    strip.querySelectorAll('.count').forEach(runCounter);
+    return;
+  }
+
   const obs = new IntersectionObserver((entries) => {
     entries.forEach(e => {
       if (e.isIntersecting) {
-        e.target.querySelectorAll('.count').forEach(el => {
-          const target  = parseFloat(el.dataset.target);
-          const suffix  = el.dataset.suffix || '';
-          const dur     = 2200;
-          const step    = target / (dur / 16);
-          let cur = 0;
-          const t = setInterval(() => {
-            cur = Math.min(cur + step, target);
-            el.textContent = (target < 10 ? cur.toFixed(1) : Math.floor(cur)) + suffix;
-            if (cur >= target) clearInterval(t);
-          }, 16);
-        });
+        e.target.querySelectorAll('.count').forEach(runCounter);
         obs.unobserve(e.target);
       }
     });
   }, { threshold: 0.4 });
 
-  const strip = document.querySelector('.impact-strip');
-  if (strip) obs.observe(strip);
+  obs.observe(strip);
 }
 
 /* ════════════════════════════════════════

@@ -1,582 +1,756 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="Manan Mittal — Cloud DevOps Engineer. AWS, Kubernetes, Terraform, Python. Building infrastructure that scales." />
-  <title>Manan Mittal — Cloud DevOps Engineer</title>
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500;600;700&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="style.css" />
-</head>
-<body>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="Manan Mittal — Cloud DevOps Engineer. AWS, Kubernetes, Terraform, Python. Building infrastructure that scales."
+    />
+    <title>Manan Mittal — Cloud DevOps Engineer</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <!-- Mouse glow -->
+    <div id="glow"></div>
 
-  <!-- Mouse glow -->
-  <div id="glow"></div>
+    <!-- Progress bar -->
+    <div id="progress"></div>
 
-  <!-- Progress bar -->
-  <div id="progress"></div>
-
-  <!-- LOADER -->
-  <div id="loader">
-    <div class="ld-wrap">
-      <div class="ld-logo">MM_</div>
-      <div class="ld-bar-wrap">
-        <div class="ld-bar" id="ldBar"></div>
+    <!-- LOADER -->
+    <div id="loader">
+      <div class="ld-wrap">
+        <div class="ld-logo">MM_</div>
+        <div class="ld-bar-wrap">
+          <div class="ld-bar" id="ldBar"></div>
+        </div>
+        <div class="ld-status" id="ldStatus">LOADING SYSTEMS...</div>
       </div>
-      <div class="ld-status" id="ldStatus">LOADING SYSTEMS...</div>
     </div>
-  </div>
 
-  <!-- ═══ NAV ═══ -->
-  <nav id="nav">
-    <a href="#hero" class="n-logo">&lt;MM/&gt;</a>
-    <div class="n-right">
-      <ul class="n-links" id="nLinks">
-        <li><a href="#about">About</a></li>
-        <li><a href="#skills">Stack</a></li>
-        <li><a href="#experience">Work</a></li>
-        <li><a href="#projects">Projects</a></li>
-        <li><a href="#writing">Writing</a></li>
-        <li><a href="https://github.com/MananM20" target="_blank" rel="noopener" class="n-gh" title="GitHub">
-          <svg width="18" height="18" fill="currentColor" viewBox="0 0 24 24"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0 0 24 12c0-6.63-5.37-12-12-12z"/></svg>
-        </a></li>
-        <li><a href="resume.pdf" download class="n-cta">↓ Resume</a></li>
-      </ul>
-      <button class="n-burger" id="burger" aria-label="Menu">
-        <span></span><span></span>
-      </button>
-    </div>
-  </nav>
+    <!-- ═══ NAV ═══ -->
+    <nav id="nav">
+      <a href="#hero" class="n-logo">&lt;MM/&gt;</a>
+      <div class="n-right">
+        <ul class="n-links" id="nLinks">
+          <li><a href="#about">About</a></li>
+          <li><a href="#skills">Stack</a></li>
+          <li><a href="#experience">Work</a></li>
+          <li><a href="#projects">Projects</a></li>
+          <li>
+            <a
+              href="https://github.com/MananM20"
+              target="_blank"
+              rel="noopener"
+              class="n-gh"
+              title="GitHub"
+            >
+              <svg
+                width="18"
+                height="18"
+                fill="currentColor"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0 0 24 12c0-6.63-5.37-12-12-12z"
+                />
+              </svg>
+            </a>
+          </li>
+          <li><a href="resume.pdf" download class="n-cta">↓ Resume</a></li>
+        </ul>
+        <button class="n-burger" id="burger" aria-label="Menu">
+          <span></span><span></span>
+        </button>
+      </div>
+    </nav>
 
-  <!-- ═══════════════════════════
+    <!-- ═══════════════════════════
        HERO — EDITORIAL
   ══════════════════════════════ -->
-  <section id="hero">
-    <div class="hero-eyebrow">
-      <span class="he-tag">Cloud DevOps Engineer</span>
-      <span class="he-sep">✦</span>
-      <span>LTIMindtree · 2024 – Present</span>
-      <span class="he-sep">✦</span>
-      <span class="he-avail"><span class="he-dot"></span>Open to Work</span>
-    </div>
-
-    <h1 class="hero-name">
-      <span class="hn-a" data-scramble="MANAN">MANAN</span>
-      <span class="hn-b" data-scramble="MITTAL">MITTAL</span>
-    </h1>
-
-    <div class="hero-lower">
-      <p class="hero-desc">
-        Building cloud infrastructure that ships<br>faster, scales further, and breaks less.
-      </p>
-      <div class="hero-actions">
-        <a href="#contact" class="btn-primary mag">Hire Me</a>
-        <a href="resume.pdf" download class="btn-ghost">↓ Resume</a>
-        <a href="https://github.com/MananM20" target="_blank" rel="noopener" class="btn-icon" title="GitHub">
-          <svg width="20" height="20" fill="currentColor" viewBox="0 0 24 24"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0 0 24 12c0-6.63-5.37-12-12-12z"/></svg>
-        </a>
+    <section id="hero">
+      <div class="hero-eyebrow">
+        <span class="he-tag">Cloud DevOps Engineer</span>
+        <span class="he-sep">✦</span>
+        <span>LTM · 2024 – Present</span>
+        <span class="he-sep">✦</span>
+        <span class="he-avail"><span class="he-dot"></span>Open to Work</span>
       </div>
-    </div>
 
-    <div class="hero-ticker-wrap">
-      <div class="ticker">
-        <div class="ticker-inner">
-          <span>AWS EKS ✦</span><span>Kubernetes ✦</span><span>Terraform ✦</span>
-          <span>Python ✦</span><span>GitLab CI/CD ✦</span><span>Prometheus ✦</span>
-          <span>Grafana ✦</span><span>Apache Kafka ✦</span><span>Docker ✦</span>
-          <span>Helm ✦</span><span>Jenkins ✦</span><span>GitOps ✦</span>
-          <span>Lambda ✦</span><span>SQS ✦</span><span>DynamoDB ✦</span>
-          <span>AWS EKS ✦</span><span>Kubernetes ✦</span><span>Terraform ✦</span>
-          <span>Python ✦</span><span>GitLab CI/CD ✦</span><span>Prometheus ✦</span>
-          <span>Grafana ✦</span><span>Apache Kafka ✦</span><span>Docker ✦</span>
-          <span>Helm ✦</span><span>Jenkins ✦</span><span>GitOps ✦</span>
-          <span>Lambda ✦</span><span>SQS ✦</span><span>DynamoDB ✦</span>
+      <h1 class="hero-name">
+        <span class="hn-a" data-scramble="MANAN">MANAN</span>
+        <span class="hn-b" data-scramble="MITTAL">MITTAL</span>
+      </h1>
+
+      <div class="hero-lower">
+        <p class="hero-desc">
+          Building cloud infrastructure that ships<br />faster, scales further,
+          and breaks less.
+        </p>
+        <div class="hero-actions">
+          <a href="#contact" class="btn-primary mag">Hire Me</a>
+          <a href="resume.pdf" download class="btn-ghost">↓ Resume</a>
+          <a
+            href="https://github.com/MananM20"
+            target="_blank"
+            rel="noopener"
+            class="btn-icon"
+            title="GitHub"
+          >
+            <svg width="20" height="20" fill="currentColor" viewBox="0 0 24 24">
+              <path
+                d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0 0 24 12c0-6.63-5.37-12-12-12z"
+              />
+            </svg>
+          </a>
         </div>
       </div>
-    </div>
 
-    <div class="hero-scroll">
-      <div class="hs-bar"></div>
-      <span>SCROLL</span>
-    </div>
-  </section>
+      <div class="hero-ticker-wrap">
+        <div class="ticker">
+          <div class="ticker-inner">
+            <span>AWS EKS ✦</span><span>Kubernetes ✦</span
+            ><span>Terraform ✦</span> <span>Python ✦</span
+            ><span>GitLab CI/CD ✦</span><span>Prometheus ✦</span>
+            <span>Grafana ✦</span><span>Apache Kafka ✦</span
+            ><span>Docker ✦</span> <span>Helm ✦</span><span>Jenkins ✦</span
+            ><span>GitOps ✦</span> <span>Lambda ✦</span><span>SQS ✦</span
+            ><span>DynamoDB ✦</span> <span>AWS EKS ✦</span
+            ><span>Kubernetes ✦</span><span>Terraform ✦</span>
+            <span>Python ✦</span><span>GitLab CI/CD ✦</span
+            ><span>Prometheus ✦</span> <span>Grafana ✦</span
+            ><span>Apache Kafka ✦</span><span>Docker ✦</span> <span>Helm ✦</span
+            ><span>Jenkins ✦</span><span>GitOps ✦</span> <span>Lambda ✦</span
+            ><span>SQS ✦</span><span>DynamoDB ✦</span>
+          </div>
+        </div>
+      </div>
 
-  <!-- ═══════════════════════════
+      <div class="hero-scroll">
+        <div class="hs-bar"></div>
+        <span>SCROLL</span>
+      </div>
+    </section>
+
+    <!-- ═══════════════════════════
        ABOUT — PILLARS + IMPACT
   ══════════════════════════════ -->
-  <section id="about">
-    <div class="wrapper">
-      <div class="sec-label reveal">/ ABOUT</div>
+    <section id="about">
+      <div class="wrapper">
+        <div class="sec-label reveal">/ ABOUT</div>
 
-      <div class="pillars reveal">
-        <div class="pillar">
-          <div class="p-num">01</div>
-          <h3>Infrastructure</h3>
-          <p>Kubernetes (EKS), Terraform, CloudFormation — provisioning fault-tolerant cloud platforms built for scale from day one.</p>
+        <div class="pillars reveal">
+          <div class="pillar">
+            <div class="p-num">01</div>
+            <h3>Infrastructure</h3>
+            <p>
+              Kubernetes (EKS), Terraform, CloudFormation — provisioning
+              fault-tolerant cloud platforms built for scale from day one.
+            </p>
+          </div>
+          <div class="p-divider"></div>
+          <div class="pillar">
+            <div class="p-num">02</div>
+            <h3>Automation</h3>
+            <p>
+              GitLab CI/CD, Jenkins, Python scripting — pipelines that deploy
+              code <strong>40% faster</strong> and never drift from desired
+              state.
+            </p>
+          </div>
+          <div class="p-divider"></div>
+          <div class="pillar">
+            <div class="p-num">03</div>
+            <h3>Reliability</h3>
+            <p>
+              Prometheus, Grafana, distributed tracing — observability that
+              reduced MTTR by <strong>30%</strong> and catches issues before
+              users do.
+            </p>
+          </div>
         </div>
-        <div class="p-divider"></div>
-        <div class="pillar">
-          <div class="p-num">02</div>
-          <h3>Automation</h3>
-          <p>GitLab CI/CD, Jenkins, Python scripting — pipelines that deploy code <strong>40% faster</strong> and never drift from desired state.</p>
-        </div>
-        <div class="p-divider"></div>
-        <div class="pillar">
-          <div class="p-num">03</div>
-          <h3>Reliability</h3>
-          <p>Prometheus, Grafana, distributed tracing — observability that reduced MTTR by <strong>30%</strong> and catches issues before users do.</p>
+
+        <div class="impact-strip reveal">
+          <div class="impact-item">
+            <div class="imp-val">
+              <span class="count" data-target="2.5" data-suffix="+">0</span>
+            </div>
+            <div class="imp-key">Years production experience</div>
+          </div>
+          <div class="imp-divider"></div>
+          <div class="impact-item">
+            <div class="imp-val">
+              <span class="count" data-target="3" data-suffix="">0</span>
+            </div>
+            <div class="imp-key">AWS &amp; cloud certifications</div>
+          </div>
+          <div class="imp-divider"></div>
+          <div class="impact-item">
+            <div class="imp-val">
+              <span class="count" data-target="50" data-suffix="K+">0</span>
+            </div>
+            <div class="imp-key">Events/day on Kafka pipeline</div>
+          </div>
+          <div class="imp-divider"></div>
+          <div class="impact-item">
+            <div class="imp-val">
+              <span class="count" data-target="3" data-suffix="">0</span>
+            </div>
+            <div class="imp-key">Environments managed (dev/stage/prod)</div>
+          </div>
         </div>
       </div>
+    </section>
 
-      <div class="impact-strip reveal">
-        <div class="impact-item">
-          <div class="imp-val"><span class="count" data-target="2.5" data-suffix="+">0</span></div>
-          <div class="imp-key">Years production experience</div>
-        </div>
-        <div class="imp-divider"></div>
-        <div class="impact-item">
-          <div class="imp-val"><span class="count" data-target="3" data-suffix="">0</span></div>
-          <div class="imp-key">AWS &amp; cloud certifications</div>
-        </div>
-        <div class="imp-divider"></div>
-        <div class="impact-item">
-          <div class="imp-val"><span class="count" data-target="50" data-suffix="K+">0</span></div>
-          <div class="imp-key">Events/day on Kafka pipeline</div>
-        </div>
-        <div class="imp-divider"></div>
-        <div class="impact-item">
-          <div class="imp-val"><span class="count" data-target="3" data-suffix="">0</span></div>
-          <div class="imp-key">Environments managed (dev/stage/prod)</div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- ═══════════════════════════
+    <!-- ═══════════════════════════
        SKILLS — TECH GRID
   ══════════════════════════════ -->
-  <section id="skills">
-    <div class="wrapper">
-      <div class="sec-label reveal">/ TECH STACK</div>
-      <h2 class="sec-title reveal" data-scramble="ARSENAL">ARSENAL</h2>
+    <section id="skills">
+      <div class="wrapper">
+        <div class="sec-label reveal">/ TECH STACK</div>
+        <h2 class="sec-title reveal" data-scramble="ARSENAL">ARSENAL</h2>
 
-      <div class="tech-grid reveal">
-
-        <div class="tg-category">
-          <div class="tg-cat-header">
-            <span class="tg-cat-dot" style="background:#7C6AF7"></span>
-            Container &amp; Orchestration
+        <div class="tech-grid reveal">
+          <div class="tg-category">
+            <div class="tg-cat-header">
+              <span class="tg-cat-dot" style="background: #7c6af7"></span>
+              Container &amp; Orchestration
+            </div>
+            <div class="tg-chips">
+              <span class="tg-chip primary">Kubernetes (EKS)</span>
+              <span class="tg-chip primary">Docker</span>
+              <span class="tg-chip primary">Helm</span>
+              <span class="tg-chip">RBAC</span>
+              <span class="tg-chip">HPA</span>
+              <span class="tg-chip">ECS</span>
+            </div>
           </div>
-          <div class="tg-chips">
-            <span class="tg-chip primary">Kubernetes (EKS)</span>
-            <span class="tg-chip primary">Docker</span>
-            <span class="tg-chip primary">Helm</span>
-            <span class="tg-chip">ECS</span>
-            <span class="tg-chip">RBAC</span>
-            <span class="tg-chip">HPA</span>
-            <span class="tg-chip">Pod Autoscaling</span>
+
+          <div class="tg-category">
+            <div class="tg-cat-header">
+              <span class="tg-cat-dot" style="background: #f472b6"></span>
+              AWS Services
+            </div>
+            <div class="tg-chips">
+              <span class="tg-chip primary">Lambda</span>
+              <span class="tg-chip primary">SQS / SNS</span>
+              <span class="tg-chip primary">IAM</span>
+              <span class="tg-chip">S3</span>
+              <span class="tg-chip">EC2 / VPC</span>
+              <span class="tg-chip primary">CloudWatch</span>
+              <span class="tg-chip">Step Functions</span>
+              <span class="tg-chip primary">CloudFormation</span>
+            </div>
+          </div>
+
+          <div class="tg-category">
+            <div class="tg-cat-header">
+              <span class="tg-cat-dot" style="background: #fbbf24"></span>
+              CI/CD &amp; IaC
+            </div>
+            <div class="tg-chips">
+              <span class="tg-chip primary">Terraform</span>
+              <span class="tg-chip primary">GitLab CI/CD</span>
+              <span class="tg-chip primary">Jenkins</span>
+              <span class="tg-chip">GitOps</span>
+              <span class="tg-chip primary">AWS CDK</span>
+            </div>
+          </div>
+
+          <div class="tg-category">
+            <div class="tg-cat-header">
+              <span class="tg-cat-dot" style="background: #34d399"></span>
+              Observability
+            </div>
+            <div class="tg-chips">
+              <span class="tg-chip primary">Prometheus</span>
+              <span class="tg-chip primary">Grafana</span>
+              <span class="tg-chip">Loki</span>
+              <span class="tg-chip primary">CloudWatch</span>
+            </div>
+          </div>
+
+          <div class="tg-category">
+            <div class="tg-cat-header">
+              <span class="tg-cat-dot" style="background: #60a5fa"></span>
+              Programming &amp; Scripting
+            </div>
+            <div class="tg-chips">
+              <span class="tg-chip primary">Python</span>
+              <span class="tg-chip primary">Bash / Shell Scripting</span>
+            </div>
+          </div>
+
+          <div class="tg-category">
+            <div class="tg-cat-header">
+              <span class="tg-cat-dot" style="background: #f87171"></span>
+              Event Streaming
+            </div>
+            <div class="tg-chips">
+              <span class="tg-chip primary">Apache Kafka</span>
+              <span class="tg-chip">Consumer Groups</span>
+              <span class="tg-chip primary">Dead-Letter Queues</span>
+              <span class="tg-chip">Offset Management</span>
+            </div>
           </div>
         </div>
-
-        <div class="tg-category">
-          <div class="tg-cat-header">
-            <span class="tg-cat-dot" style="background:#F472B6"></span>
-            Cloud &amp; AWS
-          </div>
-          <div class="tg-chips">
-            <span class="tg-chip primary">EKS</span>
-            <span class="tg-chip primary">Lambda</span>
-            <span class="tg-chip primary">SQS / SNS</span>
-            <span class="tg-chip">S3</span>
-            <span class="tg-chip">EC2 / VPC</span>
-            <span class="tg-chip">IAM</span>
-            <span class="tg-chip">CloudWatch</span>
-            <span class="tg-chip">Step Functions</span>
-            <span class="tg-chip">CloudFormation</span>
-          </div>
-        </div>
-
-        <div class="tg-category">
-          <div class="tg-cat-header">
-            <span class="tg-cat-dot" style="background:#FBBF24"></span>
-            DevOps &amp; IaC
-          </div>
-          <div class="tg-chips">
-            <span class="tg-chip primary">Terraform</span>
-            <span class="tg-chip primary">GitLab CI/CD</span>
-            <span class="tg-chip primary">Helm</span>
-            <span class="tg-chip">Jenkins</span>
-            <span class="tg-chip">AWS CDK</span>
-            <span class="tg-chip">GitOps</span>
-            <span class="tg-chip">Git</span>
-          </div>
-        </div>
-
-        <div class="tg-category">
-          <div class="tg-cat-header">
-            <span class="tg-cat-dot" style="background:#34D399"></span>
-            Observability
-          </div>
-          <div class="tg-chips">
-            <span class="tg-chip primary">Prometheus</span>
-            <span class="tg-chip primary">Grafana</span>
-            <span class="tg-chip">Loki</span>
-            <span class="tg-chip">CloudWatch</span>
-            <span class="tg-chip">Distributed Logging</span>
-            <span class="tg-chip">Alerting</span>
-          </div>
-        </div>
-
-        <div class="tg-category">
-          <div class="tg-cat-header">
-            <span class="tg-cat-dot" style="background:#60A5FA"></span>
-            Programming
-          </div>
-          <div class="tg-chips">
-            <span class="tg-chip primary">Python</span>
-            <span class="tg-chip primary">Bash / Shell</span>
-            <span class="tg-chip">SQL</span>
-            <span class="tg-chip">R</span>
-          </div>
-        </div>
-
-        <div class="tg-category">
-          <div class="tg-cat-header">
-            <span class="tg-cat-dot" style="background:#F87171"></span>
-            Data &amp; Streaming
-          </div>
-          <div class="tg-chips">
-            <span class="tg-chip primary">Apache Kafka</span>
-            <span class="tg-chip">Apache Airflow</span>
-            <span class="tg-chip">Apache Spark</span>
-            <span class="tg-chip">DynamoDB</span>
-            <span class="tg-chip">PostgreSQL</span>
-            <span class="tg-chip">MongoDB</span>
-          </div>
-        </div>
-
       </div>
-    </div>
-  </section>
+    </section>
 
-  <!-- ═══════════════════════════
+    <!-- ═══════════════════════════
        EXPERIENCE
   ══════════════════════════════ -->
-  <section id="experience">
-    <div class="wrapper">
-      <div class="sec-label reveal">/ EXPERIENCE</div>
-      <h2 class="sec-title reveal" data-scramble="WORK">WORK</h2>
+    <section id="experience">
+      <div class="wrapper">
+        <div class="sec-label reveal">/ EXPERIENCE</div>
+        <h2 class="sec-title reveal" data-scramble="WORK">WORK</h2>
 
-      <div class="exp-block reveal">
-        <div class="exp-left">
-          <div class="exp-co">LTIMindtree</div>
-          <div class="exp-period">Jan 2024<br>Present</div>
-          <div class="exp-loc">Noida, India</div>
-        </div>
-        <div class="exp-right">
-          <div class="exp-role">Cloud DevOps Engineer / Python Developer</div>
+        <div class="exp-block reveal">
+          <div class="exp-left">
+            <div class="exp-co">LTM</div>
+            <div class="exp-period">Jan 2024<br />Present</div>
+            <div class="exp-loc">Noida, India</div>
+          </div>
+          <div class="exp-right">
+            <div class="exp-role">Cloud DevOps Engineer / Python Developer</div>
 
-          <!-- Visual achievement cards -->
-          <div class="ach-grid">
-            <div class="ach-card">
-              <div class="ach-icon">⚙️</div>
-              <div class="ach-title">CI/CD Automation</div>
-              <p>Designed fully automated build, test, and deploy pipelines with GitLab CI/CD and Jenkins integrated with Terraform — replaced manual, script-based releases with a single git push workflow.</p>
-            </div>
-            <div class="ach-card">
-              <div class="ach-icon">☸️</div>
-              <div class="ach-title">Kubernetes Platform Engineering</div>
-              <p>Built and operated EKS-based microservices infrastructure with Helm GitOps, RBAC, HPA, and rolling deployments — ensuring services stay available during updates and traffic spikes.</p>
-            </div>
-            <div class="ach-card">
-              <div class="ach-icon">📊</div>
-              <div class="ach-title">Observability &amp; Alerting</div>
-              <p>Set up Prometheus and Grafana across all services — gave the team real-time visibility into container health and latency, and configured alerts that notify before users notice an issue.</p>
-            </div>
-            <div class="ach-card">
-              <div class="ach-icon">⚡</div>
-              <div class="ach-title">Event-Driven Architecture</div>
-              <p>Decoupled tightly coupled services using SQS + Lambda async workflows and a Kafka pipeline processing <strong>10K–50K events/day</strong> — eliminated cascading failures under peak load.</p>
-            </div>
-            <div class="ach-card">
-              <div class="ach-icon">🔒</div>
-              <div class="ach-title">Security &amp; Compliance</div>
-              <p>Configured Kubernetes RBAC policies and secrets management across the cluster — enforced least-privilege access per enterprise security standards across all workloads and namespaces.</p>
-            </div>
-            <div class="ach-card">
-              <div class="ach-icon">🐍</div>
-              <div class="ach-title">Python Automation</div>
-              <p>Wrote Python and Bash tooling for infrastructure provisioning and routine operational tasks — removed repetitive manual work from the team's daily workflow and eliminated config drift.</p>
+            <!-- Visual achievement cards -->
+            <div class="ach-grid">
+              <div class="ach-card">
+                <div class="ach-icon">⚙️</div>
+                <div class="ach-title">CI/CD Automation</div>
+                <p>
+                  Designed fully automated build, test, and deploy pipelines
+                  with GitLab CI/CD and Jenkins integrated with Terraform —
+                  replaced manual, script-based releases with a single git push
+                  workflow.
+                </p>
+              </div>
+              <div class="ach-card">
+                <div class="ach-icon">☸️</div>
+                <div class="ach-title">Kubernetes Platform Engineering</div>
+                <p>
+                  Built and operated EKS-based microservices infrastructure with
+                  Helm GitOps, RBAC, HPA, and rolling deployments — ensuring
+                  services stay available during updates and traffic spikes.
+                </p>
+              </div>
+              <div class="ach-card">
+                <div class="ach-icon">📊</div>
+                <div class="ach-title">Observability &amp; Alerting</div>
+                <p>
+                  Set up Prometheus and Grafana across all services — gave the
+                  team real-time visibility into container health and latency,
+                  and configured alerts that notify before users notice an
+                  issue.
+                </p>
+              </div>
+              <div class="ach-card">
+                <div class="ach-icon">⚡</div>
+                <div class="ach-title">Event-Driven Architecture</div>
+                <p>
+                  Decoupled tightly coupled services using SQS + Lambda async
+                  workflows and a Kafka pipeline processing
+                  <strong>10K–50K events/day</strong> — eliminated cascading
+                  failures under peak load.
+                </p>
+              </div>
+              <div class="ach-card">
+                <div class="ach-icon">🔒</div>
+                <div class="ach-title">Security &amp; Compliance</div>
+                <p>
+                  Configured Kubernetes RBAC policies and secrets management —
+                  enforced least-privilege access per enterprise standards,
+                  ensuring developers can deploy without touching production
+                  infrastructure directly.
+                </p>
+              </div>
+              <div class="ach-card">
+                <div class="ach-icon">🐍</div>
+                <div class="ach-title">
+                  Python Automation &amp; Config Drift
+                </div>
+                <p>
+                  Wrote Python and Bash tooling for infrastructure provisioning
+                  — eliminated config drift between environments and reduced
+                  manual operational work, freeing the team for higher-value
+                  engineering.
+                </p>
+              </div>
+              <div class="ach-card">
+                <div class="ach-icon">🧩</div>
+                <div class="ach-title">Reusable Platform Components</div>
+                <p>
+                  Built shared Python modules and Lambda layers used across
+                  multiple services — reduced duplication, standardised
+                  deployment patterns, and let teams onboard to the platform
+                  without rebuilding from scratch.
+                </p>
+              </div>
+              <div class="ach-card">
+                <div class="ach-icon">🚨</div>
+                <div class="ach-title">Production Incident Response</div>
+                <p>
+                  Diagnosed and resolved live production incidents including pod
+                  crashes, pipeline failures, and consumer lag spikes — restored
+                  service stability and added monitoring to prevent recurrence.
+                </p>
+              </div>
             </div>
           </div>
         </div>
-      </div>
 
-      <div class="edu-row reveal">
-        <div class="edu-left">
-          <div class="exp-co" style="font-size:clamp(1.5rem,3vw,2rem)">VIT</div>
-          <div class="exp-period">2019<br>2023</div>
-        </div>
-        <div class="exp-right">
-          <div class="exp-role">B.Tech — Computer Science (AI &amp; ML)</div>
-          <p style="color:var(--muted);font-size:0.9rem;margin-top:8px">Vellore Institute of Technology · Vellore, India</p>
+        <div class="edu-row reveal">
+          <div class="edu-left">
+            <div class="exp-co" style="font-size: clamp(1.5rem, 3vw, 2rem)">
+              VIT
+            </div>
+            <div class="exp-period">2019<br />2023</div>
+          </div>
+          <div class="exp-right">
+            <div class="exp-role">B.Tech — Computer Science (AI &amp; ML)</div>
+            <p style="color: var(--muted); font-size: 0.9rem; margin-top: 8px">
+              Vellore Institute of Technology · Vellore, India
+            </p>
+          </div>
         </div>
       </div>
-    </div>
-  </section>
+    </section>
 
-  <!-- ═══════════════════════════
+    <!-- ═══════════════════════════
        PROJECTS
   ══════════════════════════════ -->
-  <section id="projects">
-    <div class="wrapper">
-      <div class="sec-label reveal">/ PROJECTS</div>
-      <h2 class="sec-title reveal" data-scramble="WORK SHIPPED">WORK SHIPPED</h2>
+    <section id="projects">
+      <div class="wrapper">
+        <div class="sec-label reveal">/ PROJECTS</div>
+        <h2 class="sec-title reveal" data-scramble="WORK SHIPPED">
+          WORK SHIPPED
+        </h2>
 
-      <div class="proj-cards">
-
-        <!-- Project 01 -->
-        <div class="proj-card-new reveal">
-          <div class="pcn-left">
-            <div class="pcn-num">01</div>
-            <div class="pcn-icon">☸️</div>
-            <h3 class="pcn-title">Kubernetes-Based Microservices Platform</h3>
-            <p class="pcn-summary">Designed and operated a production-grade container platform on AWS EKS — solving the real problem of inconsistent, manual deployments that caused environment drift and overnight rollback failures.</p>
-            <div class="pcn-tags">
-              <span>AWS EKS</span><span>Helm</span><span>GitOps</span><span>GitLab CI/CD</span><span>Terraform</span><span>HPA</span>
+        <div class="proj-cards">
+          <!-- Project 01 -->
+          <div class="proj-card-new reveal">
+            <div class="pcn-left">
+              <div class="pcn-num">01</div>
+              <div class="pcn-icon">☸️</div>
+              <h3 class="pcn-title">Kubernetes-Based Microservices Platform</h3>
+              <p class="pcn-summary">
+                Designed and operated a production-grade container platform on
+                AWS EKS — solving the real problem of inconsistent, manual
+                deployments that caused environment drift and overnight rollback
+                failures.
+              </p>
+              <div class="pcn-tags">
+                <span>AWS EKS</span><span>Helm</span><span>GitOps</span
+                ><span>GitLab CI/CD</span><span>Terraform</span><span>HPA</span>
+              </div>
+              <div class="pcn-links">
+                <span class="pcn-private">
+                  <svg
+                    width="13"
+                    height="13"
+                    fill="currentColor"
+                    viewBox="0 0 24 24"
+                  >
+                    <path
+                      d="M12 1C8.676 1 6 3.676 6 7v1H4v15h16V8h-2V7c0-3.324-2.676-6-6-6zm0 2c2.276 0 4 1.724 4 4v1H8V7c0-2.276 1.724-4 4-4zm0 9a2 2 0 1 1 0 4 2 2 0 0 1 0-4z"
+                    />
+                  </svg>
+                  Enterprise repo — private
+                </span>
+                <a
+                  href="https://github.com/MananM20"
+                  target="_blank"
+                  rel="noopener"
+                  class="pcn-gh-link"
+                >
+                  <svg
+                    width="14"
+                    height="14"
+                    fill="currentColor"
+                    viewBox="0 0 24 24"
+                  >
+                    <path
+                      d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0 0 24 12c0-6.63-5.37-12-12-12z"
+                    />
+                  </svg>
+                  View GitHub →
+                </a>
+              </div>
             </div>
-            <div class="pcn-links">
-              <span class="pcn-private">
-                <svg width="13" height="13" fill="currentColor" viewBox="0 0 24 24"><path d="M12 1C8.676 1 6 3.676 6 7v1H4v15h16V8h-2V7c0-3.324-2.676-6-6-6zm0 2c2.276 0 4 1.724 4 4v1H8V7c0-2.276 1.724-4 4-4zm0 9a2 2 0 1 1 0 4 2 2 0 0 1 0-4z"/></svg>
-                Enterprise repo — private
-              </span>
-              <a href="https://github.com/MananM20" target="_blank" rel="noopener" class="pcn-gh-link">
-                <svg width="14" height="14" fill="currentColor" viewBox="0 0 24 24"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0 0 24 12c0-6.63-5.37-12-12-12z"/></svg>
-                View GitHub →
-              </a>
+            <div class="pcn-right">
+              <div class="pcn-outcomes">
+                <div class="pco-label">What Was Delivered</div>
+                <div class="pco-item">
+                  <div class="pco-check">✓</div>
+                  <div>
+                    Single git push triggers the full pipeline —
+                    <strong>build, test, push to ECR, and deploy to EKS</strong>
+                    with zero manual intervention across dev, staging, and
+                    production
+                  </div>
+                </div>
+                <div class="pco-item">
+                  <div class="pco-check">✓</div>
+                  <div>
+                    <strong>Zero-downtime rolling deployments</strong> replaced
+                    manual cutover windows — services stay up during every
+                    release regardless of traffic
+                  </div>
+                </div>
+                <div class="pco-item">
+                  <div class="pco-check">✓</div>
+                  <div>
+                    Every environment config is a
+                    <strong>versioned Helm chart in Git</strong> — any drift is
+                    caught immediately and rollback is a single revert commit
+                  </div>
+                </div>
+                <div class="pco-item">
+                  <div class="pco-check">✓</div>
+                  <div>
+                    Cluster access governed by
+                    <strong>RBAC policies with least-privilege</strong> —
+                    developers deploy without touching production infrastructure
+                    directly
+                  </div>
+                </div>
+              </div>
             </div>
           </div>
-          <div class="pcn-right">
-            <div class="pcn-outcomes">
-              <div class="pco-label">What Was Delivered</div>
-              <div class="pco-item">
-                <div class="pco-check">✓</div>
-                <div>Single git push triggers the full pipeline — <strong>build, test, push to ECR, and deploy to EKS</strong> with zero manual intervention across dev, staging, and production</div>
+
+          <!-- Project 02 -->
+          <div class="proj-card-new reveal">
+            <div class="pcn-left">
+              <div class="pcn-num">02</div>
+              <div class="pcn-icon">⚡</div>
+              <h3 class="pcn-title">Real-Time Event Processing Pipeline</h3>
+              <p class="pcn-summary">
+                Replaced a brittle synchronous API chain with an async Kafka
+                pipeline — solving cascading service failures that were causing
+                production timeouts during peak load.
+              </p>
+              <div class="pcn-tags">
+                <span>Apache Kafka</span><span>Python</span><span>AWS SQS</span
+                ><span>Lambda</span><span>Grafana</span><span>DLQ</span>
               </div>
-              <div class="pco-item">
-                <div class="pco-check">✓</div>
-                <div><strong>Zero-downtime rolling deployments</strong> replaced manual cutover windows — services stay up during every release regardless of traffic</div>
+              <div class="pcn-links">
+                <span class="pcn-private">
+                  <svg
+                    width="13"
+                    height="13"
+                    fill="currentColor"
+                    viewBox="0 0 24 24"
+                  >
+                    <path
+                      d="M12 1C8.676 1 6 3.676 6 7v1H4v15h16V8h-2V7c0-3.324-2.676-6-6-6zm0 2c2.276 0 4 1.724 4 4v1H8V7c0-2.276 1.724-4 4-4zm0 9a2 2 0 1 1 0 4 2 2 0 0 1 0-4z"
+                    />
+                  </svg>
+                  Enterprise repo — private
+                </span>
+                <a
+                  href="https://github.com/MananM20/pyspark"
+                  target="_blank"
+                  rel="noopener"
+                  class="pcn-gh-link"
+                >
+                  <svg
+                    width="14"
+                    height="14"
+                    fill="currentColor"
+                    viewBox="0 0 24 24"
+                  >
+                    <path
+                      d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0 0 24 12c0-6.63-5.37-12-12-12z"
+                    />
+                  </svg>
+                  Related: PySpark Work →
+                </a>
               </div>
-              <div class="pco-item">
-                <div class="pco-check">✓</div>
-                <div>Every environment config is a <strong>versioned Helm chart in Git</strong> — any drift is caught immediately and rollback is a single revert commit</div>
-              </div>
-              <div class="pco-item">
-                <div class="pco-check">✓</div>
-                <div>Cluster access governed by <strong>RBAC policies with least-privilege</strong> — developers deploy without touching production infrastructure directly</div>
+            </div>
+            <div class="pcn-right">
+              <div class="pcn-outcomes">
+                <div class="pco-label">What Was Delivered</div>
+                <div class="pco-item">
+                  <div class="pco-check">✓</div>
+                  <div>
+                    Services fully decoupled — a slow downstream consumer
+                    <strong>no longer blocks the request chain</strong>; each
+                    service processes at its own pace via async queues
+                  </div>
+                </div>
+                <div class="pco-item">
+                  <div class="pco-check">✓</div>
+                  <div>
+                    Pipeline handles
+                    <strong>10,000–50,000 events per day</strong> across
+                    partitioned Kafka topics with consumer groups managing
+                    offset tracking and parallelism
+                  </div>
+                </div>
+                <div class="pco-item">
+                  <div class="pco-check">✓</div>
+                  <div>
+                    <strong>Dead-letter queues + idempotent processing</strong>
+                    ensure no event is lost — failed messages are retried
+                    automatically without duplication
+                  </div>
+                </div>
+                <div class="pco-item">
+                  <div class="pco-check">✓</div>
+                  <div>
+                    Grafana alerts fire on
+                    <strong>consumer lag thresholds</strong> — team knows about
+                    processing bottlenecks before they surface as user-facing
+                    timeouts
+                  </div>
+                </div>
               </div>
             </div>
           </div>
         </div>
 
-        <!-- Project 02 -->
-        <div class="proj-card-new reveal">
-          <div class="pcn-left">
-            <div class="pcn-num">02</div>
-            <div class="pcn-icon">⚡</div>
-            <h3 class="pcn-title">Real-Time Event Processing Pipeline</h3>
-            <p class="pcn-summary">Replaced a brittle synchronous API chain with an async Kafka pipeline — solving cascading service failures that were causing production timeouts during peak load.</p>
-            <div class="pcn-tags">
-              <span>Apache Kafka</span><span>Python</span><span>AWS SQS</span><span>Lambda</span><span>Grafana</span><span>DLQ</span>
-            </div>
-            <div class="pcn-links">
-              <span class="pcn-private">
-                <svg width="13" height="13" fill="currentColor" viewBox="0 0 24 24"><path d="M12 1C8.676 1 6 3.676 6 7v1H4v15h16V8h-2V7c0-3.324-2.676-6-6-6zm0 2c2.276 0 4 1.724 4 4v1H8V7c0-2.276 1.724-4 4-4zm0 9a2 2 0 1 1 0 4 2 2 0 0 1 0-4z"/></svg>
-                Enterprise repo — private
-              </span>
-              <a href="https://github.com/MananM20/pyspark" target="_blank" rel="noopener" class="pcn-gh-link">
-                <svg width="14" height="14" fill="currentColor" viewBox="0 0 24 24"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0 0 24 12c0-6.63-5.37-12-12-12z"/></svg>
-                Related: PySpark Work →
-              </a>
-            </div>
-          </div>
-          <div class="pcn-right">
-            <div class="pcn-outcomes">
-              <div class="pco-label">What Was Delivered</div>
-              <div class="pco-item">
-                <div class="pco-check">✓</div>
-                <div>Services fully decoupled — a slow downstream consumer <strong>no longer blocks the request chain</strong>; each service processes at its own pace via async queues</div>
-              </div>
-              <div class="pco-item">
-                <div class="pco-check">✓</div>
-                <div>Pipeline handles <strong>10,000–50,000 events per day</strong> across partitioned Kafka topics with consumer groups managing offset tracking and parallelism</div>
-              </div>
-              <div class="pco-item">
-                <div class="pco-check">✓</div>
-                <div><strong>Dead-letter queues + idempotent processing</strong> ensure no event is lost — failed messages are retried automatically without duplication</div>
-              </div>
-              <div class="pco-item">
-                <div class="pco-check">✓</div>
-                <div>Grafana alerts fire on <strong>consumer lag thresholds</strong> — team knows about processing bottlenecks before they surface as user-facing timeouts</div>
+        <!-- GitHub CTA -->
+        <div class="gh-cta reveal">
+          <div class="gh-cta-left">
+            <svg width="22" height="22" fill="currentColor" viewBox="0 0 24 24">
+              <path
+                d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0 0 24 12c0-6.63-5.37-12-12-12z"
+              />
+            </svg>
+            <div>
+              <div class="gh-cta-title">github.com/MananM20</div>
+              <div class="gh-cta-sub">
+                Production DevOps work lives in private enterprise repositories
+                at LTM
               </div>
             </div>
           </div>
+          <a
+            href="https://github.com/MananM20"
+            target="_blank"
+            rel="noopener"
+            class="btn-primary mag"
+            >View GitHub Profile →</a
+          >
         </div>
-
       </div>
+    </section>
 
-      <!-- GitHub CTA -->
-      <div class="gh-cta reveal">
-        <div class="gh-cta-left">
-          <svg width="22" height="22" fill="currentColor" viewBox="0 0 24 24"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0 0 24 12c0-6.63-5.37-12-12-12z"/></svg>
-          <div>
-            <div class="gh-cta-title">github.com/MananM20</div>
-            <div class="gh-cta-sub">Production DevOps work lives in private enterprise repositories at LTIMindtree</div>
-          </div>
-        </div>
-        <a href="https://github.com/MananM20" target="_blank" rel="noopener" class="btn-primary mag">View GitHub Profile →</a>
-      </div>
+    <!-- Writing section hidden until first article is published
+  <section id="writing"> ... </section>
+  -->
 
-    </div>
-  </section>
-
-  <!-- ═══════════════════════════
-       WRITING / BLOG
-  ══════════════════════════════ -->
-  <section id="writing">
-    <div class="wrapper">
-      <div class="sec-label reveal">/ TECHNICAL WRITING</div>
-      <h2 class="sec-title reveal" data-scramble="WRITING">WRITING</h2>
-
-      <div class="writing-grid reveal">
-
-        <a href="#" class="article-card" target="_blank" rel="noopener">
-          <div class="ac-top">
-            <span class="ac-tag">Kubernetes</span>
-            <span class="ac-date">Coming Soon</span>
-          </div>
-          <h3 class="ac-title">Kubernetes RBAC Deep Dive: Least Privilege at Scale</h3>
-          <p class="ac-desc">How I hardened EKS cluster security using RBAC policies, service accounts, and secrets management in a production enterprise environment.</p>
-          <div class="ac-footer">
-            <span class="ac-read">Add link when published →</span>
-          </div>
-        </a>
-
-        <a href="#" class="article-card" target="_blank" rel="noopener">
-          <div class="ac-top">
-            <span class="ac-tag">CI/CD</span>
-            <span class="ac-date">Coming Soon</span>
-          </div>
-          <h3 class="ac-title">GitOps with Helm: How We Cut Deploy Time by 40%</h3>
-          <p class="ac-desc">A practical walkthrough of building a declarative GitOps pipeline using Helm charts and GitLab CI/CD — from commit to production in minutes.</p>
-          <div class="ac-footer">
-            <span class="ac-read">Add link when published →</span>
-          </div>
-        </a>
-
-        <a href="#" class="article-card" target="_blank" rel="noopener">
-          <div class="ac-top">
-            <span class="ac-tag">Observability</span>
-            <span class="ac-date">Coming Soon</span>
-          </div>
-          <h3 class="ac-title">Building a Production-Grade Observability Stack with Prometheus &amp; Grafana</h3>
-          <p class="ac-desc">Setting up real-time alerting, dashboards, and distributed logging that reduced our MTTR by 30% — and the lessons learned along the way.</p>
-          <div class="ac-footer">
-            <span class="ac-read">Add link when published →</span>
-          </div>
-        </a>
-
-      </div>
-
-      <div class="writing-cta reveal">
-        <p>I write about Cloud DevOps, Kubernetes, and Platform Engineering.</p>
-        <a href="https://medium.com/@YOUR_HANDLE" target="_blank" rel="noopener" class="btn-ghost">View All Articles →</a>
-      </div>
-    </div>
-  </section>
-
-  <!-- ═══════════════════════════
+    <!-- ═══════════════════════════
        CERTIFICATIONS
   ══════════════════════════════ -->
-  <section id="certs">
-    <div class="wrapper">
-      <div class="sec-label reveal">/ CREDENTIALS</div>
-      <div class="cert-row reveal">
-        <div class="cert-item">
-          <div class="cert-ico">☁️</div>
-          <div class="cert-info">
-            <div class="cert-name">AWS Certified Solutions Architect</div>
-            <div class="cert-sub">Associate · SAA-C03 · Amazon Web Services</div>
+    <section id="certs">
+      <div class="wrapper">
+        <div class="sec-label reveal">/ CREDENTIALS</div>
+        <div class="cert-row reveal">
+          <div class="cert-item">
+            <div class="cert-ico">☁️</div>
+            <div class="cert-info">
+              <div class="cert-name">AWS Certified Solutions Architect</div>
+              <div class="cert-sub">
+                Associate · SAA-C03 · Amazon Web Services
+              </div>
+            </div>
+            <div class="cert-check">✓</div>
           </div>
-          <div class="cert-check">✓</div>
-        </div>
-        <div class="cert-item">
-          <div class="cert-ico">🍃</div>
-          <div class="cert-info">
-            <div class="cert-name">MongoDB SI Associate</div>
-            <div class="cert-sub">Associate Level · MongoDB University</div>
+          <div class="cert-item">
+            <div class="cert-ico">🍃</div>
+            <div class="cert-info">
+              <div class="cert-name">MongoDB SI Associate</div>
+              <div class="cert-sub">Associate Level · MongoDB University</div>
+            </div>
+            <div class="cert-check">✓</div>
           </div>
-          <div class="cert-check">✓</div>
-        </div>
-        <div class="cert-item">
-          <div class="cert-ico">🤖</div>
-          <div class="cert-info">
-            <div class="cert-name">GitHub Copilot Certified</div>
-            <div class="cert-sub">AI-Assisted Development · GitHub</div>
+          <div class="cert-item">
+            <div class="cert-ico">🤖</div>
+            <div class="cert-info">
+              <div class="cert-name">GitHub Copilot Certified</div>
+              <div class="cert-sub">AI-Assisted Development · GitHub</div>
+            </div>
+            <div class="cert-check">✓</div>
           </div>
-          <div class="cert-check">✓</div>
         </div>
       </div>
-    </div>
-  </section>
+    </section>
 
-  <!-- ═══════════════════════════
+    <!-- ═══════════════════════════
        CONTACT
   ══════════════════════════════ -->
-  <section id="contact">
-    <div class="wrapper">
-      <div class="sec-label reveal">/ CONTACT</div>
-      <div class="contact-hero reveal">
-        <h2 class="contact-big">Let's Build<br><span class="accent-text">Something.</span></h2>
-        <div class="contact-right">
-          <p class="contact-desc">Looking for Cloud DevOps, Platform Engineering, or SRE roles. If you're building something ambitious — I'd love to be part of it.</p>
-          <div class="contact-links">
-            <a href="mailto:m20.manan@gmail.com" class="cl-item">
-              <span class="cl-label">EMAIL</span>
-              <span class="cl-val">m20.manan@gmail.com</span>
-              <span class="cl-arr">↗</span>
-            </a>
-            <a href="https://linkedin.com/in/manan0220" target="_blank" rel="noopener" class="cl-item">
-              <span class="cl-label">LINKEDIN</span>
-              <span class="cl-val">linkedin.com/in/manan0220</span>
-              <span class="cl-arr">↗</span>
-            </a>
-            <a href="tel:+916393857728" class="cl-item">
-              <span class="cl-label">PHONE</span>
-              <span class="cl-val">+91 6393857728</span>
-              <span class="cl-arr">↗</span>
-            </a>
+    <section id="contact">
+      <div class="wrapper">
+        <div class="sec-label reveal">/ CONTACT</div>
+        <div class="contact-hero reveal">
+          <h2 class="contact-big">
+            Let's Build<br /><span class="accent-text">Something.</span>
+          </h2>
+          <div class="contact-right">
+            <p class="contact-desc">
+              Looking for Cloud DevOps, Platform Engineering, or SRE roles. If
+              you're building something ambitious — I'd love to be part of it.
+            </p>
+            <div class="contact-links">
+              <a href="mailto:m20.manan@gmail.com" class="cl-item">
+                <span class="cl-label">EMAIL</span>
+                <span class="cl-val">m20.manan@gmail.com</span>
+                <span class="cl-arr">↗</span>
+              </a>
+              <a
+                href="https://linkedin.com/in/manan0220"
+                target="_blank"
+                rel="noopener"
+                class="cl-item"
+              >
+                <span class="cl-label">LINKEDIN</span>
+                <span class="cl-val">linkedin.com/in/manan0220</span>
+                <span class="cl-arr">↗</span>
+              </a>
+              <a href="tel:+916393857728" class="cl-item">
+                <span class="cl-label">PHONE</span>
+                <span class="cl-val">+91 6393857728</span>
+                <span class="cl-arr">↗</span>
+              </a>
+            </div>
+            <a
+              href="mailto:m20.manan@gmail.com"
+              class="btn-primary mag"
+              style="margin-top: 32px; display: inline-flex"
+              >Send Message →</a
+            >
           </div>
-          <a href="mailto:m20.manan@gmail.com" class="btn-primary mag" style="margin-top:32px;display:inline-flex">Send Message →</a>
         </div>
       </div>
-    </div>
-  </section>
+    </section>
 
-  <!-- FOOTER -->
-  <footer>
-    <div class="wrapper ft-wrap">
-      <span class="ft-logo">&lt;MM/&gt;</span>
-      <span class="ft-copy">Manan Mittal &copy; 2025 — Cloud DevOps Engineer</span>
-      <div class="ft-links">
-        <a href="mailto:m20.manan@gmail.com">Email</a>
-        <a href="https://linkedin.com/in/manan0220" target="_blank" rel="noopener">LinkedIn</a>
+    <!-- FOOTER -->
+    <footer>
+      <div class="wrapper ft-wrap">
+        <span class="ft-logo">&lt;MM/&gt;</span>
+        <span class="ft-copy"
+          >Manan Mittal &copy; 2025 — Cloud DevOps Engineer</span
+        >
+        <div class="ft-links">
+          <a href="mailto:m20.manan@gmail.com">Email</a>
+          <a
+            href="https://linkedin.com/in/manan0220"
+            target="_blank"
+            rel="noopener"
+            >LinkedIn</a
+          >
+        </div>
       </div>
-    </div>
-  </footer>
+    </footer>
 
-  <script src="script.js"></script>
-</body>
+    <script src="script.js?v=2"></script>
+  </body>
 </html>

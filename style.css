@@ -966,6 +966,17 @@ footer {
   text-transform: uppercase;
   letter-spacing: 0.14em;
   margin-bottom: 14px;
+  flex-wrap: wrap;
+}
+
+.tg-cat-note {
+  font-size: 0.68rem;
+  font-weight: 400;
+  color: var(--muted);
+  text-transform: none;
+  letter-spacing: 0.02em;
+  opacity: 0.7;
+  font-family: var(--sans);
 }
 
 .tg-cat-dot {
@@ -1003,6 +1014,43 @@ footer {
   background: rgba(124,106,247,0.08);
   font-weight: 600;
 }
+
+.tg-chip.familiar {
+  border-color: rgba(255,255,255,0.1);
+  border-style: dashed;
+  color: var(--muted);
+  background: transparent;
+  font-style: italic;
+}
+.tg-chip.familiar:hover {
+  border-color: rgba(251,191,36,0.35);
+  color: var(--amber);
+  background: rgba(251,191,36,0.05);
+  font-style: normal;
+}
+
+/* Skill legend */
+.skill-legend {
+  display: flex;
+  gap: 28px;
+  margin-bottom: 20px;
+  flex-wrap: wrap;
+}
+.sl-item {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 0.78rem;
+  color: var(--muted);
+}
+.sl-dot {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  flex-shrink: 0;
+}
+.primary-dot { background: var(--accent); }
+.familiar-dot { background: transparent; border: 1.5px dashed var(--muted); }
 
 /* ════════════════════════════════════════
    EXPERIENCE IMPACT STRIP
