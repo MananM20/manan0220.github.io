@@ -333,26 +333,71 @@ section {
   line-height: 0.88;
   letter-spacing: -0.05em;
   text-transform: uppercase;
-  margin-bottom: 48px;
+  margin-bottom: 24px;
   user-select: none;
 }
 
 .hn-a {
   display: block;
-  font-size: clamp(5.5rem, 16vw, 17rem);
+  font-size: clamp(3.2rem, 8.5vw, 8.5rem);
   font-weight: 900;
   color: var(--text);
 }
 
 .hn-b {
   display: block;
-  font-size: clamp(5.5rem, 16vw, 17rem);
+  font-size: clamp(3.2rem, 8.5vw, 8.5rem);
   font-weight: 900;
   color: transparent;
   -webkit-text-stroke: 2px rgba(242,242,238,0.25);
   transition: -webkit-text-stroke-color 0.4s;
 }
 .hero-name:hover .hn-b { -webkit-text-stroke-color: var(--accent); }
+
+/* Role line — sits right under the name, clearly readable */
+.hero-role-line {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  margin-bottom: 44px;
+  flex-wrap: wrap;
+}
+
+.hero-role-text {
+  font-size: clamp(1.5rem, 3.5vw, 3rem);
+  font-weight: 700;
+  color: var(--accent);
+  letter-spacing: -0.02em;
+  line-height: 1;
+}
+
+.hero-role-text::after {
+  content: '|';
+  color: var(--accent);
+  animation: cursorBlink 0.75s step-end infinite;
+  margin-left: 3px;
+  font-weight: 300;
+}
+
+@keyframes cursorBlink {
+  0%, 100% { opacity: 1; }
+  50%       { opacity: 0; }
+}
+
+.hero-role-divider {
+  display: block;
+  width: 40px;
+  height: 2px;
+  background: var(--border);
+  flex-shrink: 0;
+}
+
+.hero-role-sub {
+  font-family: var(--mono);
+  font-size: clamp(0.75rem, 1.2vw, 1rem);
+  color: var(--muted);
+  letter-spacing: 0.06em;
+}
 
 .hero-lower {
   display: flex;
@@ -1729,6 +1774,8 @@ footer {
   #nav.scrolled { padding: 14px 20px; }
   section { padding: 90px 0; }
   .hero-ticker-wrap { margin-left: -20px; }
+  .hero-role-divider { display: none; }
+  .hero-role-sub { display: none; }
   .n-links { display: none; position: fixed; inset: 0; background: rgba(7,8,12,0.98); flex-direction: column; align-items: center; justify-content: center; gap: 32px; z-index: 100; font-size: 1.1rem; }
   .n-links.open { display: flex; }
   .n-links a { font-size: 1.1rem; }
